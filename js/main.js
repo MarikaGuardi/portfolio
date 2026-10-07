@@ -59,28 +59,82 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ============================================
    TAB BAR
    ============================================ */
+
+// Salviamo l'HTML originale della griglia (tab "grid")
+const gridEl = document.querySelector(".grid");
+const originalGridHTML = gridEl ? gridEl.innerHTML : "";
+
+// --- VIDEO TAB 1 (reels) ---
+// Sostituisci solo i percorsi "src" con i tuoi file.
+const reelsVideos = [
+  { src: "video/aaaaah.mp4", caption: "reel 01" },
+  { src: "video/cmd.mp4", caption: "reel 02" },
+  { src: "video/reel3.mp4", caption: "reel 03" },
+];
+
+// --- VIDEO TAB 2 (tags) ---
+const tagsVideos = [
+  { src: "video/tag1.mp4", caption: "clip 01" },
+  { src: "video/tag2.mp4", caption: "clip 02" },
+  { src: "video/tag3.mp4", caption: "clip 03" },
+];
+
+// --- Genera l'HTML di una tile con solo video ---
+function buildVideoTile(video) {
+  return `
+    <div class="tile tile-custom">
+      <video
+        class="tile-media"
+        src="${video.src}"
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      ></video>
+      ${video.caption ? `<span class="tile-caption">${video.caption}</span>` : ""}
+    </div>
+  `;
+}
+
+// --- Popola la griglia in base al tipo di tab attivo ---
+function renderGrid(type) {
+  if (!gridEl) return;
+  gridEl.dataset.active = type;
+
+  if (type === "grid") {
+    gridEl.innerHTML = originalGridHTML;
+    attachPostViewerListeners();
+    return;
+  }
+
+  const videos = type === "reels" ? reelsVideos : tagsVideos;
+  gridEl.innerHTML = videos.map(buildVideoTile).join("");
+
+  // Hover play su desktop, tap play su mobile + apertura post viewer
+  gridEl.querySelectorAll(".tile-custom video").forEach((vid, index) => {
+    const tile = vid.closest(".tile");
+
+    tile.addEventListener("mouseenter", () => vid.play().catch(() => {}));
+    tile.addEventListener("mouseleave", () => {
+      vid.pause();
+      vid.currentTime = 0;
+    });
+
+    // Click → apre il post viewer con solo il video
+    tile.addEventListener("click", () => {
+      openVideoPost(videos[index].src);
+    });
+  });
+}
+
+// --- Listener dei tab ---
 document.querySelectorAll(".tab").forEach((tab) => {
   tab.addEventListener("click", function () {
     document
       .querySelectorAll(".tab")
       .forEach((t) => t.classList.remove("active"));
     this.classList.add("active");
-
-    const grid = document.querySelector(".grid");
-    if (!grid) return;
-    const type = this.dataset.tab;
-    grid.dataset.active = type;
-
-    const tiles = grid.querySelectorAll(".tile");
-    tiles.forEach((tile, i) => {
-      if (type === "grid") {
-        tile.style.display = "";
-      } else if (type === "reels") {
-        tile.style.display = i === 2 || i === 3 ? "" : "none";
-      } else if (type === "tags") {
-        tile.style.display = i === 0 || i === 1 ? "" : "none";
-      }
-    });
+    renderGrid(this.dataset.tab);
   });
 });
 
@@ -624,6 +678,25 @@ function openPost(key) {
   const data = projectsData[key];
   if (!data) return;
 
+  // Ripristina la struttura completa (nel caso si venga da openVideoPost)
+  const postCard = postOverlay.querySelector(".post-card");
+  if (postCard) postCard.classList.remove("video-only");
+
+  const postHeader = postOverlay.querySelector(".post-header");
+  const postRight = postOverlay.querySelector(".post-right");
+  const postActions = postOverlay.querySelector(".post-actions");
+
+  if (postHeader) postHeader.style.display = "";
+  if (postRight) postRight.style.display = "";
+  if (postActions) postActions.style.display = "";
+
+  // Ripristina anche i default del video
+  if (postVideo) {
+    postVideo.controls = true;
+    postVideo.muted = false;
+    postVideo.loop = false;
+  }
+
   postTitle.textContent = data.title;
   postSubtitle.textContent =
     currentLang() === "it" ? data.subtitle.it : data.subtitle.en;
@@ -653,36 +726,86 @@ function openPost(key) {
   document.body.style.overflow = "hidden";
 }
 
+/* ============================================
+   POST VIEWER — modalità solo video
+   (per tab reels / tags)
+   ============================================ */
+function openVideoPost(videoSrc) {
+  if (!postOverlay || !postVideo) return;
+
+  const postCard = postOverlay.querySelector(".post-card");
+  if (postCard) postCard.classList.add("video-only");
+
+  // Nascondi SOLO la colonna destra (titolo + descrizione + link).
+  // Header e azioni restano visibili.
+  const postRight = postOverlay.querySelector(".post-right");
+  if (postRight) postRight.style.display = "none";
+
+  // Assicurati che header e azioni siano visibili
+  const postHeader = postOverlay.querySelector(".post-header");
+  const postActions = postOverlay.querySelector(".post-actions");
+  if (postHeader) postHeader.style.display = "";
+  if (postActions) postActions.style.display = "";
+
+  // Solo video, niente immagine
+  postImage.style.display = "none";
+  postVideo.style.display = "block";
+  postVideo.src = videoSrc;
+  postVideo.controls = true;
+  postVideo.muted = false;
+  postVideo.loop = true;
+  postVideo.load();
+
+  const p = postVideo.play();
+  if (p !== undefined) p.catch(() => {});
+
+  postOverlay.classList.add("open");
+  postOverlay.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
 function closePost() {
   if (!postOverlay) return;
   postOverlay.classList.remove("open");
   postOverlay.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 
+  const postCard = postOverlay.querySelector(".post-card");
+  if (postCard) postCard.classList.remove("video-only");
+
   if (postVideo) {
     postVideo.pause();
     postVideo.removeAttribute("src");
+    postVideo.loop = false;
     postVideo.load();
   }
   if (postImage) postImage.removeAttribute("src");
 }
 
-document.querySelectorAll(".grid .tile:not(.tile-more)").forEach((tile) => {
-  const href = tile.getAttribute("href") || "";
-  let key = null;
-  if (href.includes("kama-web")) key = "kama";
-  else if (href.includes("aurwebdev.com")) key = "codex";
-  else if (href.includes("appetize.io")) key = "swipe";
-  else if (href.includes("coinfarmgame")) key = "coinfarm";
-  else if (href.includes("oleificiolombardo")) key = "oleificio";
+/* ============================================
+   LISTENER TILE GRIGLIA ORIGINALE → POST VIEWER
+   ============================================ */
+function attachPostViewerListeners() {
+  document
+    .querySelectorAll(".grid .tile:not(.tile-more):not(.tile-custom)")
+    .forEach((tile) => {
+      const href = tile.getAttribute("href") || "";
+      let key = null;
+      if (href.includes("kama-web")) key = "kama";
+      else if (href.includes("aurwebdev.com")) key = "codex";
+      else if (href.includes("appetize.io")) key = "swipe";
+      else if (href.includes("coinfarmgame")) key = "coinfarm";
+      else if (href.includes("oleificiolombardo")) key = "oleificio";
 
-  if (!key) return;
+      if (!key) return;
 
-  tile.addEventListener("click", (e) => {
-    e.preventDefault();
-    openPost(key);
-  });
-});
+      tile.addEventListener("click", (e) => {
+        e.preventDefault();
+        openPost(key);
+      });
+    });
+}
+
+attachPostViewerListeners();
 
 if (postClose) postClose.addEventListener("click", closePost);
 if (postOverlay) {
