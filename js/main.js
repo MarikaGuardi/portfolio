@@ -333,6 +333,26 @@ if (audioToggle && bgAudio && audioIcon) {
 }
 
 /* ============================================
+   PLAYER AUDIO — pausa al click fuori dal player
+   ============================================ */
+document.addEventListener("click", (e) => {
+  if (!bgAudio || bgAudio.paused) return;
+  if (!audioToggle) return;
+
+  // se il click è dentro il pulsante audio (o suoi discendenti), ignora
+  if (audioToggle.contains(e.target)) return;
+
+  // altrimenti metti in pausa e ripristina l'icona play
+  bgAudio.pause();
+  if (audioIcon) audioIcon.innerHTML = ICON_PLAY;
+  audioToggle.classList.remove("playing");
+  audioToggle.setAttribute(
+    "aria-label",
+    currentLang() === "it" ? "Riproduci audio" : "Play audio",
+  );
+});
+
+/* ============================================
    STORY VIEWER (testuale, stile IG)
    ============================================ */
 const storyOverlay = document.getElementById("storyOverlay");

@@ -23,45 +23,45 @@
    20. RESPONSIVE — TABLET / DESKTOP
    ============================================================================ */
 
-
 /* ============================================================================
    01. VARIABILI & PALETTE
    ============================================================================ */
 :root {
   /* Colori base */
-  --bg:          #000000;
-  --surface:     #121212;
-  --surface-2:   #1c1c1e;
-  --border:      #2a2a2a;
+  --bg: #000000;
+  --surface: #121212;
+  --surface-2: #1c1c1e;
+  --border: #2a2a2a;
 
   /* Testo */
-  --text:        #f5f5f7;
-  --text-muted:  #a8a8a8;
-  --text-dim:    #6e6e6e;
+  --text: #f5f5f7;
+  --text-muted: #a8a8a8;
+  --text-dim: #6e6e6e;
 
   /* Accenti */
-  --accent:            #ff0a78;
-  --accent-dark:       #d10063;
-  --accent-soft:       #ff5ba3;
-  --accent-blue:       #0a78ff;
+  --accent: #ff0a78;
+  --accent-dark: #d10063;
+  --accent-soft: #ff5ba3;
+  --accent-blue: #0a78ff;
   --accent-blue-light: #1a72de;
 
   /* Raggi */
-  --radius:      14px;
-  --radius-sm:   10px;
+  --radius: 14px;
+  --radius-sm: 10px;
   --radius-pill: 999px;
 
   /* Altezze */
-  --topbar-h:    56px;
+  --topbar-h: 56px;
 }
-
 
 /* ============================================================================
    02. RESET & BASE
    ============================================================================ */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -70,7 +70,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: var(--text);
@@ -82,10 +86,18 @@ body {
   padding-bottom: 0;
 }
 
-img { max-width: 100%; display: block; }
-a   { color: inherit; text-decoration: none; }
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.25;
   margin: 0 0 0.6em;
 }
@@ -96,18 +108,22 @@ h2 {
   margin-bottom: 1em;
 }
 
-
 /* ============================================================================
    03. UTILITÀ LINGUA (i18n)
    ============================================================================ */
-html[data-lang="it"] .lang-en { display: none !important; }
-html[data-lang="en"] .lang-it { display: none !important; }
-
+html[data-lang="it"] .lang-en {
+  display: none !important;
+}
+html[data-lang="en"] .lang-it {
+  display: none !important;
+}
 
 /* ============================================================================
    04. LAYOUT
    ============================================================================ */
-main.container { flex: 1; }
+main.container {
+  flex: 1;
+}
 
 .container {
   width: 100%;
@@ -122,7 +138,6 @@ main.container { flex: 1; }
   color: var(--text-dim);
   font-size: 0.78rem;
 }
-
 
 /* ============================================================================
    05. TOP BAR
@@ -178,7 +193,6 @@ main.container { flex: 1; }
   gap: 12px;
 }
 
-
 /* ============================================================================
    06. LANGUAGE TOGGLE
    ============================================================================ */
@@ -193,7 +207,9 @@ main.container { flex: 1; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 
 .lang-toggle:hover {
@@ -209,9 +225,12 @@ main.container { flex: 1; }
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
-html[data-lang="it"] .lang-toggle .flag-it { display: inline-block; }
-html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
-
+html[data-lang="it"] .lang-toggle .flag-it {
+  display: inline-block;
+}
+html[data-lang="en"] .lang-toggle .flag-en {
+  display: inline-block;
+}
 
 /* ============================================================================
    07. PROFILO
@@ -286,7 +305,6 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-radius: 50%;
 }
 
-
 /* ============================================================================
    08. BIO & PLAYER AUDIO
    ============================================================================ */
@@ -294,14 +312,18 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 4px 0 16px;
   font-size: 0.9rem;
 }
-.bio p { margin: 0 0 2px; }
+.bio p {
+  margin: 0 0 2px;
+}
 
 .bio-role {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-bottom: 8px !important;
 }
-.bio-line { color: var(--text); }
+.bio-line {
+  color: var(--text);
+}
 
 .bio-link {
   color: var(--accent-blue-light);
@@ -332,17 +354,25 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
   text-align: left;
 }
 .audio-pill:hover {
   border-color: var(--text);
   background: rgba(255, 10, 120, 0.05);
 }
-.audio-pill:hover .audio-icon svg { fill: var(--accent); }
+.audio-pill:hover .audio-icon svg {
+  fill: var(--accent);
+}
 
-.audio-pill.playing { border-color: var(--text); }
-.audio-pill.playing .audio-icon svg { fill: var(--accent); }
+.audio-pill.playing {
+  border-color: var(--text);
+}
+.audio-pill.playing .audio-icon svg {
+  fill: var(--accent);
+}
 
 .audio-icon {
   display: inline-flex;
@@ -375,11 +405,14 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 500;
-  transition: border-color 0.15s, color 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
   white-space: nowrap;
 }
-.audio-add:hover { border-color: var(--text); }
-
+.audio-add:hover {
+  border-color: var(--text);
+}
 
 /* ============================================================================
    09. AZIONI (bottoni)
@@ -404,11 +437,19 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   background: var(--surface-2);
   color: var(--text);
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s, border-color 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    transform 0.1s,
+    border-color 0.15s,
+    color 0.15s;
   text-align: center;
 }
-.btn:hover  { background: #2a2a2a; }
-.btn:active { transform: scale(0.98); }
+.btn:hover {
+  background: #2a2a2a;
+}
+.btn:active {
+  transform: scale(0.98);
+}
 
 .btn-follow {
   background: var(--accent-blue);
@@ -420,14 +461,21 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-color: var(--accent-blue-light);
 }
 
-.btn-ghost { background: var(--surface-2); }
-.btn-ghost:hover { border-color: var(--text); }
+.btn-ghost {
+  background: var(--surface-2);
+}
+.btn-ghost:hover {
+  border-color: var(--text);
+}
 
 .btn svg,
-.btn img { flex-shrink: 0; }
+.btn img {
+  flex-shrink: 0;
+}
 
-.btn-ghost svg { margin-right: 6px; }
-
+.btn-ghost svg {
+  margin-right: 6px;
+}
 
 /* ============================================================================
    10. HIGHLIGHTS (cerchi storie)
@@ -439,7 +487,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 4px 0 20px;
   scrollbar-width: none;
 }
-.highlights::-webkit-scrollbar { display: none; }
+.highlights::-webkit-scrollbar {
+  display: none;
+}
 
 .highlight {
   flex: 0 0 auto;
@@ -476,16 +526,23 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   outline: 2px solid #363636;
   outline-offset: 3px;
 
-  transition: transform 0.15s, outline-color 0.15s;
+  transition:
+    transform 0.15s,
+    outline-color 0.15s;
 }
 
-.highlight:hover .highlight-circle { transform: scale(1.05); }
+.highlight:hover .highlight-circle {
+  transform: scale(1.05);
+}
 
 .hl-1,
 .hl-2,
 .hl-3,
 .hl-4,
-.hl-5 { background: linear-gradient(135deg, #ffffff, #ffffff); border-color: transparent; }
+.hl-5 {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-color: transparent;
+}
 
 .highlight-label {
   font-size: 0.72rem;
@@ -495,7 +552,6 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 
 /* ============================================================================
    11. TAB BAR
@@ -524,14 +580,17 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
-.tab:hover { color: var(--text-muted); }
+.tab:hover {
+  color: var(--text-muted);
+}
 .tab.active {
   color: var(--accent-blue-light);
   border-bottom-color: var(--accent-blue-light);
 }
-
 
 /* ============================================================================
    12. GRIGLIA PROGETTI
@@ -555,7 +614,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s, filter 0.3s;
+  transition:
+    transform 0.4s,
+    filter 0.3s;
 }
 .tile:hover img {
   transform: scale(1.06);
@@ -611,7 +672,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 8px;
   transition: background 0.15s;
 }
-.tile-more:hover { background: #1f1f1f; }
+.tile-more:hover {
+  background: #1f1f1f;
+}
 .tile-more-icon {
   font-size: 1.6rem;
   color: var(--accent-blue-light);
@@ -623,7 +686,6 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-weight: 500;
   font-size: 0.72rem;
 }
-
 
 /* ============================================================================
    13. SEZIONI LUNGHE (skills, contacts)
@@ -652,7 +714,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-weight: 500;
   transition: border-color 0.15s;
 }
-.skill-card:hover { border-color: var(--accent); }
+.skill-card:hover {
+  border-color: var(--accent);
+}
 .skill-card img {
   width: 22px;
   height: 22px;
@@ -676,13 +740,15 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 600;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
 }
 .contacts-list a:hover {
   background: var(--surface-2);
   border-color: var(--accent-blue-light);
 }
-
 
 /* ============================================================================
    14. CHAT FINTA
@@ -706,7 +772,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   opacity: 0;
   transform: translateY(12px) scale(0.98);
   pointer-events: none;
-  transition: opacity 0.22s, transform 0.22s;
+  transition:
+    opacity 0.22s,
+    transform 0.22s;
 }
 .chat-window.open {
   opacity: 1;
@@ -721,26 +789,27 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   justify-content: space-between;
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+  background: linear-gradient(135deg, var(--surface-2), var(--surface));
   color: #ffffff;
 }
 .chat-header-info {
   display: flex;
-  align-items: center;
   gap: 8px;
   font-size: 0.9rem;
+  align-items: baseline;
 }
 .chat-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #0ad232;
-  border: 1px solid #e3e3e3;
+  background: #59d972;
+  border: 1px solid #000000;
 }
 .chat-status {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.78rem;
+  font-size: 0.6rem;
 }
+
 .chat-close {
   background: transparent;
   border: none;
@@ -749,7 +818,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 1rem;
   opacity: 0.8;
 }
-.chat-close:hover { opacity: 1; }
+.chat-close:hover {
+  opacity: 1;
+}
 
 /* --- Body --- */
 .chat-body {
@@ -770,8 +841,14 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   animation: msgIn 0.25s ease;
 }
 @keyframes msgIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .chat-msg.left {
   align-self: flex-start;
@@ -799,11 +876,23 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-radius: 50%;
   animation: typing 1.2s infinite;
 }
-.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
-.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+.chat-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.chat-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
 @keyframes typing {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30%           { transform: translateY(-4px); opacity: 1; }
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
 }
 
 /* --- Input --- */
@@ -829,8 +918,12 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   outline: none;
   transition: border-color 0.15s;
 }
-.chat-input::placeholder { color: var(--text-dim); }
-.chat-input:focus { border-color: var(--accent); }
+.chat-input::placeholder {
+  color: var(--text-dim);
+}
+.chat-input:focus {
+  border-color: var(--accent);
+}
 
 .chat-send {
   flex-shrink: 0;
@@ -844,10 +937,16 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition:
+    background 0.15s,
+    transform 0.1s;
 }
-.chat-send:hover  { background: var(--accent-soft); }
-.chat-send:active { transform: scale(0.94); }
+.chat-send:hover {
+  background: var(--accent-soft);
+}
+.chat-send:active {
+  transform: scale(0.94);
+}
 
 /* --- Contatti inline --- */
 .chat-msg-contacts {
@@ -879,14 +978,16 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text);
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s;
 }
 .chat-contact-link:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--surface-2);
 }
-
 
 /* ============================================================================
    15. STORY VIEWER (testuale)
@@ -925,8 +1026,14 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   animation: storyIn 0.25s ease;
 }
 @keyframes storyIn {
-  from { transform: scale(0.94); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* --- Barra avanzamento --- */
@@ -1000,7 +1107,10 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   min-width: 0;
   max-width: 100%;
 }
-.story-audio-inline svg { flex-shrink: 0; opacity: 0.95; }
+.story-audio-inline svg {
+  flex-shrink: 0;
+  opacity: 0.95;
+}
 
 .story-audio-inline-text {
   overflow: hidden;
@@ -1021,7 +1131,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 0 4px;
   line-height: 1;
 }
-.story-close:hover { opacity: 1; }
+.story-close:hover {
+  opacity: 1;
+}
 
 /* --- Avatar anello gradiente --- */
 .story-avatar-ring {
@@ -1073,7 +1185,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 0.85rem;
   outline: none;
 }
-.story-reply::placeholder { color: rgba(255, 255, 255, 0.75); }
+.story-reply::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
 
 .story-icon-btn {
   background: transparent;
@@ -1088,7 +1202,10 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
 .story-like svg {
   fill: none;
   stroke: #fff;
-  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.15s ease;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.15s ease;
 }
 .story-like.liked svg {
   fill: #ff3040;
@@ -1098,10 +1215,18 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   animation: heartPop 0.35s ease;
 }
 @keyframes heartPop {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.3); }
-  70%  { transform: scale(0.92); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* --- Toast "messaggio inviato" --- */
@@ -1118,7 +1243,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-radius: 999px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   z-index: 5;
   white-space: nowrap;
   backdrop-filter: blur(6px);
@@ -1132,7 +1259,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
 .story-card-text {
   background: linear-gradient(160deg, #1a0a14 0%, #000 55%, #1a0a14 100%);
 }
-.story-card-text .story-media { display: none !important; }
+.story-card-text .story-media {
+  display: none !important;
+}
 
 .story-text-content {
   position: absolute;
@@ -1145,7 +1274,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   z-index: 1;
   scrollbar-width: none;
 }
-.story-text-content::-webkit-scrollbar { display: none; }
+.story-text-content::-webkit-scrollbar {
+  display: none;
+}
 
 .story-text-inner {
   width: 100%;
@@ -1155,8 +1286,14 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   animation: storyTextIn 0.5s ease;
 }
 @keyframes storyTextIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .story-big-title {
@@ -1218,7 +1355,6 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border-radius: 8px;
   backdrop-filter: blur(4px);
 }
-
 
 /* ============================================================================
    16. POST VIEWER (con video 9:16)
@@ -1317,7 +1453,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   opacity: 0.8;
   padding: 4px 8px;
 }
-.post-close:hover { opacity: 1; }
+.post-close:hover {
+  opacity: 1;
+}
 
 /* --- Corpo a 2 colonne --- */
 .post-content {
@@ -1379,12 +1517,17 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 4px;
   transition: transform 0.15s;
 }
-.post-icon-btn:active { transform: scale(0.9); }
+.post-icon-btn:active {
+  transform: scale(0.9);
+}
 
 .post-like svg {
   fill: none;
   stroke: currentColor;
-  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.15s ease;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.15s ease;
 }
 .post-like.liked svg {
   fill: #ff3040;
@@ -1433,8 +1576,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-weight: 600;
   transition: background 0.15s;
 }
-.post-link:hover { background: var(--accent-blue-light); }
-
+.post-link:hover {
+  background: var(--accent-blue-light);
+}
 
 /* ============================================================================
    17. HIGHLIGHT VIEWER
@@ -1503,7 +1647,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text);
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 }
 .highlight-chip:hover {
   border-color: var(--accent);
@@ -1541,7 +1687,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   padding: 4px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
-.highlight-block-row:last-child { border-bottom: none; }
+.highlight-block-row:last-child {
+  border-bottom: none;
+}
 .highlight-block-row span:last-child {
   color: var(--text-muted);
   font-size: 0.78rem;
@@ -1573,7 +1721,9 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   white-space: nowrap;
   transition: background 0.15s;
 }
-.highlight-cta:hover { background: var(--accent-soft); }
+.highlight-cta:hover {
+  background: var(--accent-soft);
+}
 
 .highlight-cta.ghost {
   background: transparent;
@@ -1670,7 +1820,10 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text);
-  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
 }
 .highlight-contact-link:hover {
   border-color: var(--accent);
@@ -1694,7 +1847,10 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
-  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    transform 0.1s;
 }
 .highlight-project-link:hover {
   border-color: var(--accent);
@@ -1719,12 +1875,13 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
 }
 
 /* --- Scrollbar contenuto highlight --- */
-.highlight-content::-webkit-scrollbar { width: 4px; }
+.highlight-content::-webkit-scrollbar {
+  width: 4px;
+}
 .highlight-content::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 999px;
 }
-
 
 /* ============================================================================
    18. SCROLLBAR PERSONALIZZATA
@@ -1733,15 +1890,23 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 999px;
   transition: background 0.2s;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.35); }
-::-webkit-scrollbar-thumb:active { background: var(--accent); }
-::-webkit-scrollbar-corner { background: transparent; }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--accent);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 
 /* --- Firefox --- */
 * {
@@ -1764,23 +1929,35 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
   background: rgba(255, 255, 255, 0.28);
 }
 
-
 /* ============================================================================
    19. RESPONSIVE — MOBILE
    ============================================================================ */
 
 /* --- Mobile piccolo (≤360px) --- */
 @media (max-width: 360px) {
-  .story-text-content { padding: 64px 14px 110px; }
-  .story-big-title { font-size: 1rem; }
-  .story-para { font-size: 0.74rem; }
-  .story-list li { font-size: 0.72rem; }
+  .story-text-content {
+    padding: 64px 14px 110px;
+  }
+  .story-big-title {
+    font-size: 1rem;
+  }
+  .story-para {
+    font-size: 0.74rem;
+  }
+  .story-list li {
+    font-size: 0.72rem;
+  }
 }
 
 /* --- Mobile (≤420px) --- */
 @media (max-width: 420px) {
-  .audio-title { font-size: 0.8rem; }
-  .audio-add { padding: 8px 12px; font-size: 0.8rem; }
+  .audio-title {
+    font-size: 0.8rem;
+  }
+  .audio-add {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
 
   .highlight-certs-row {
     flex-direction: column;
@@ -1802,23 +1979,62 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
     width: 78px;
     height: 78px;
   }
-  .profile-name { font-size: 0.95rem; }
-  .stat strong { font-size: 0.95rem; }
-  .stat span { font-size: 0.7rem; }
+  .profile-name {
+    font-size: 0.95rem;
+  }
+  .stat strong {
+    font-size: 0.95rem;
+  }
+  .stat span {
+    font-size: 0.7rem;
+  }
 
   .highlight-circle {
     width: 62px;
     height: 62px;
   }
-  .highlight { width: 70px; }
+  .highlight {
+    width: 70px;
+  }
 
   .chat-window {
-    right: 12px;
-    left: 12px;
-    bottom: 12px;
-    width: auto;
-    height: calc(100vh - 100px);
-    max-height: 600px;
+    position: fixed;
+    inset: auto 0 0 0;          /* ancorata in basso */
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 85dvh;              /* dynamic viewport: si adatta alla tastiera */
+    max-height: 85dvh;
+    border-radius: 14px 14px 0 0; /* angoli solo sopra, stile bottom-sheet */
+    border-bottom: none;
+    transform: translateY(100%); /* nascosta sotto */
+    opacity: 0;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+  }
+
+  .chat-window.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .chat-header {
+    padding: 12px 14px;
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+
+  .chat-body {
+    padding: 14px;
+  }
+
+  .chat-input-row {
+    padding-bottom: max(10px, env(safe-area-inset-bottom)); /* iOS notch */
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .chat-input {
+    font-size: 16px;   /* <- IMPORTANTE: evita lo zoom automatico su iOS */
   }
 
   .story-card {
@@ -1828,67 +2044,88 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
     max-width: 100%;
   }
 
-  .story-text-content { padding: 68px 18px 120px; }
-  .story-big-title { font-size: 1.1rem; }
-  .story-role { font-size: 0.88rem; }
-  .story-location { font-size: 0.72rem; margin-bottom: 12px; }
-  .story-para { font-size: 0.78rem; line-height: 1.4; margin-bottom: 9px; }
-  .story-list li { font-size: 0.75rem; padding: 5px 8px; }
-  .story-list { gap: 4px; margin-bottom: 10px; }
+  .story-text-content {
+    padding: 68px 18px 120px;
+  }
+  .story-big-title {
+    font-size: 1.1rem;
+  }
+  .story-role {
+    font-size: 0.88rem;
+  }
+  .story-location {
+    font-size: 0.72rem;
+    margin-bottom: 12px;
+  }
+  .story-para {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-bottom: 9px;
+  }
+  .story-list li {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+  .story-list {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
 
   /* --- POST VIEWER mobile --- */
   @media (max-width: 480px) {
-  /* --- POST VIEWER mobile --- */
-  .post-card {
-    max-height: 100dvh;
-    height: 100dvh;
-    border-radius: 0;
-    max-width: 100%;
+    /* --- POST VIEWER mobile --- */
+    .post-card {
+      max-height: 100dvh;
+      height: 100dvh;
+      border-radius: 0;
+      max-width: 100%;
+    }
+
+    .post-content {
+      display: flex; /* niente più grid a 2 righe */
+      flex-direction: column;
+      overflow-y: auto; /* <- scroll qui */
+      flex: 1;
+      min-height: 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .post-left {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      flex: none; /* non si comprime */
+    }
+
+    /* Video 9:16 ma non altissimo, così si vede subito la didascalia sotto */
+    .post-media-wrap {
+      aspect-ratio: 9 / 16;
+      max-height: 60vh; /* ridotto da 70vh */
+      width: 100%;
+    }
+
+    .post-actions {
+      /* resta visibile sotto il video, dentro il flusso scrollabile */
+      width: 100%;
+    }
+
+    .post-right {
+      overflow: visible; /* lascia scorrere il genitore */
+      flex: none;
+    }
+
+    .post-body {
+      overflow: visible;
+      padding: 16px 18px 28px; /* padding-bottom extra per respiro */
+    }
   }
 
-  .post-content {
-    display: flex;           /* niente più grid a 2 righe */
-    flex-direction: column;
-    overflow-y: auto;        /* <- scroll qui */
-    flex: 1;
-    min-height: 0;
-    -webkit-overflow-scrolling: touch;
+  .highlight-content {
+    padding: 64px 18px 90px;
   }
-
-  .post-left {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    flex: none;              /* non si comprime */
-  }
-
-  /* Video 9:16 ma non altissimo, così si vede subito la didascalia sotto */
-  .post-media-wrap {
-    aspect-ratio: 9 / 16;
-    max-height: 60vh;        /* ridotto da 70vh */
-    width: 100%;
-  }
-
-  .post-actions {
-    /* resta visibile sotto il video, dentro il flusso scrollabile */
-    width: 100%;
-  }
-
-  .post-right {
-    overflow: visible;       /* lascia scorrere il genitore */
-    flex: none;
-  }
-
-  .post-body {
-    overflow: visible;
-    padding: 16px 18px 28px; /* padding-bottom extra per respiro */
+  .highlight-title {
+    font-size: 1.4rem;
   }
 }
-
-
-  .highlight-content { padding: 64px 18px 90px; }
-  .highlight-title { font-size: 1.4rem; }
-}
-
 
 /* ============================================================================
    20. RESPONSIVE — TABLET / DESKTOP
@@ -1901,11 +2138,21 @@ html[data-lang="en"] .lang-toggle .flag-en { display: inline-block; }
     height: 88vh;
     max-height: 780px;
   }
-  .story-text-content { padding: 76px 24px 128px; }
-  .story-big-title { font-size: 1.25rem; }
-  .story-role { font-size: 0.95rem; }
-  .story-para { font-size: 0.82rem; }
-  .story-list li { font-size: 0.8rem; }
+  .story-text-content {
+    padding: 76px 24px 128px;
+  }
+  .story-big-title {
+    font-size: 1.25rem;
+  }
+  .story-role {
+    font-size: 0.95rem;
+  }
+  .story-para {
+    font-size: 0.82rem;
+  }
+  .story-list li {
+    font-size: 0.8rem;
+  }
 }
 
 /* --- Tablet (≥768px) --- */
