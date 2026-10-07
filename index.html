@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n-title-it="Marika Guardi | @aurwebdev" data-i18n-title-en="Marika Guardi | Portfolio">Marika Guardi |
+    Portfolio</title>
+<link rel="icon" type="image/jpeg" href="img/marika-profile.jpg" />  <meta name="description" data-i18n-content-it="Portfolio di Marika Guardi, junior web developer."
+    data-i18n-content-en="Portfolio of Marika Guardi, junior web developer."
+    content="Portfolio di Marika Guardi, junior web developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <a href="#home" class="topbar-back" aria-label="Home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <h1 class="topbar-title">aurwebdev <span class="verified">✓</span></h1>
+    <div class="topbar-actions">
+      <button class="lang-toggle" id="langToggle" data-i18n-aria-it="Passa all'inglese"
+        data-i18n-aria-en="Switch to Italian" aria-label="Switch language">
+        <span class="flag flag-en" data-lang="en" title="English">
+          <svg viewBox="0 0 60 30" width="24" height="16" xmlns="http://www.w3.org/2000/svg">
+            <clipPath id="uk-clip">
+              <rect width="60" height="30" />
+            </clipPath>
+            <g clip-path="url(#uk-clip)">
+              <rect width="60" height="30" fill="#012169" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#uk-diag)" />
+              <clipPath id="uk-diag">
+                <path d="M30,15 L60,30 L60,0 L30,15 L0,30 L0,0 Z" />
+              </clipPath>
+              <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10" />
+              <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6" />
+            </g>
+          </svg>
+        </span>
+        <span class="flag flag-it" data-lang="it" title="Italiano">
+          <svg viewBox="0 0 3 2" width="24" height="16" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1" height="2" x="0" fill="#009246" />
+            <rect width="1" height="2" x="1" fill="#fff" />
+            <rect width="1" height="2" x="2" fill="#CE2B37" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ HEADER PROFILO ============ -->
+    <section class="profile">
+      <div class="profile-avatar-wrap" id="openStoryBtn" role="button" tabindex="0" data-i18n-aria-it="Apri storia"
+        data-i18n-aria-en="Open story" aria-label="Apri storia">
+        <div class="profile-avatar">
+          <img src="img/marika-profile.jpg" alt="Marika Guardi" />
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <p class="profile-name">Marika Guardi</p>
+        <div class="profile-stats">
+          <div class="stat">
+            <strong>4</strong>
+            <span class="lang-it">progetti</span>
+            <span class="lang-en">projects</span>
+          </div>
+          <div class="stat">
+            <strong>10+</strong>
+            <span class="lang-it">stack</span>
+            <span class="lang-en">stack</span>
+          </div>
+          <div class="stat">
+            <strong>4</strong>
+            <span class="lang-it">lingue</span>
+            <span class="lang-en">languages</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BIO ============ -->
+    <section class="bio">
+      <p class="bio-role lang-it">Jr Web Developer · Founder @kāma</p>
+      <p class="bio-role lang-en">Jr Web Developer · Founder @kāma</p>
+      <p class="bio-line">
+        📩 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ciao@aurwebdev.com" target="_blank"
+          rel="noopener noreferrer" class="bio-link">ciao@aurwebdev.com</a>
+      </p>
+      <p class="bio-line">
+        🔗 <a href="https://kama-web.com/" target="_blank" rel="noopener noreferrer" class="bio-link">kama-web.com</a>
+      </p>
+
+      <!-- Player audio stile IG -->
+      <div class="audio-row">
+        <button class="audio-pill" id="audioToggle" data-i18n-aria-it="Riproduci audio" data-i18n-aria-en="Play audio"
+          aria-label="Play audio">
+          <span class="audio-icon" id="audioIcon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+          <span class="audio-title">Young as the Morning Old as the Sea</span>
+        </button>
+
+        <a href="https://www.instagram.com/marikaguardi/" target="_blank" rel="noopener noreferrer" class="audio-add">
+          <span>@marikaguardi</span>
+        </a>
+      </div>
+
+      <!-- Audio del profilo (canzone del player) -->
+      <audio id="bgAudio" src="sounds/track.mp3" preload="none"></audio>
+      <!-- Audio dedicato alla storia (canzone diversa) -->
+      <audio id="storyAudio" src="sounds/story.mp3" preload="none" loop></audio>
+
+      <!-- ============ BOTTONI AZIONE ============ -->
+      <section class="actions">
+        <button type="button" class="btn btn-follow" id="openChatBtn">
+          <span class="lang-it">Contattami</span>
+          <span class="lang-en">Contact me</span>
+        </button>
+        <a href="cv/cv-marika-guardi-italiano.pdf" download class="btn btn-ghost lang-it">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          CV
+        </a>
+
+        <a href="cv/cv-marika-guardi-english.pdf" download class="btn btn-ghost lang-en">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          CV
+        </a>
+      </section>
+
+      <!-- ============ HIGHLIGHTS (storie) ============ -->
+      <section class="highlights">
+
+        <!-- Info / About -->
+        <a href="#about" class="highlight" data-highlight="about">
+          <div class="highlight-circle hl-4">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <span class="highlight-label"><span class="lang-it">info</span><span class="lang-en">about me</span></span>
+        </a>
+
+        <!-- Contatti -->
+        <a href="#contacts" class="highlight" data-highlight="contacts">
+          <div class="highlight-circle hl-5">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <span class="highlight-label">
+            <span class="lang-it">contatti</span>
+            <span class="lang-en">contacts</span>
+          </span>
+        </a>
+
+        <!-- Stack -->
+        <a href="#skills" class="highlight" data-highlight="stack">
+          <div class="highlight-circle hl-2">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <span class="highlight-label">stack</span>
+        </a>
+
+        <!-- Lavori / Work -->
+        <a href="#" class="highlight" data-highlight="work">
+          <div class="highlight-circle hl-3">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <span class="highlight-label"><span class="lang-it">progetti</span><span
+              class="lang-en">projects</span></span>
+        </a>
+
+        <!-- CV -->
+        <a href="#about" class="highlight" data-highlight="cv">
+          <div class="highlight-circle hl-4">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="9" y1="13" x2="15" y2="13"></line>
+              <line x1="9" y1="17" x2="15" y2="17"></line>
+            </svg>
+          </div>
+          <span class="highlight-label">cv</span>
+        </a>
+      </section>
+
+      <!-- ============ TAB BAR ============ -->
+      <nav class="tabs">
+        <button class="tab active" data-tab="grid" data-i18n-aria-it="Griglia" data-i18n-aria-en="Grid"
+          aria-label="Griglia">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </button>
+        <button class="tab" data-tab="reels" data-i18n-aria-it="Live demo" data-i18n-aria-en="Live demo"
+          aria-label="Video">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm6 4v8l6-4-6-4z"></path>
+          </svg>
+        </button>
+        <button class="tab" data-tab="tags" data-i18n-aria-it="Certificati" data-i18n-aria-en="Certificates"
+          aria-label="Repost">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- ============ GRIGLIA PROGETTI ============ -->
+      <section id="portfolio" class="grid" data-active="grid">
+
+        <a href="https://kama-web.com/" target="_blank" rel="noopener noreferrer" class="tile">
+          <img src="img/grid/kama.jpg" alt="kāma">
+          <span class="tile-views">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            LIVE
+          </span>
+          <span class="tile-pin">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 3l5 5-4 1-4 4 1 5-2 2-4-4-5 5-2-2 5-5-4-4 2-2 5 1 4-4 1-4z"></path>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://www.aurwebdev.com" target="_blank" rel="noopener noreferrer" class="tile">
+          <img src="img/grid/codex.jpeg" alt="CodeX Streaming">
+          <span class="tile-views">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            LIVE
+          </span>
+        </a>
+
+        <a href="https://appetize.io/app/b_4hjiglwkqku4rerugz6jqlddrq" target="_blank" rel="noopener noreferrer"
+          class="tile">
+          <img src="img/grid/swipecleaner.jpeg" alt="Swipe Cleaner">
+          <span class="tile-views">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm6 4v8l6-4-6-4z"></path>
+            </svg>
+            DEMO
+          </span>
+        </a>
+
+        <a href="https://coinfarmgame.netlify.app" target="_blank" rel="noopener noreferrer" class="tile">
+          <img src="img/grid/coinfarm.jpeg" alt="Coin Farm">
+          <span class="tile-views">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm6 4v8l6-4-6-4z"></path>
+            </svg>
+            PLAY
+          </span>
+        </a>
+
+        <a href="https://oleificiolombardo.it" target="_blank" rel="noopener noreferrer" class="tile">
+          <img src="img/grid/oleificiolombardo.jpeg" alt="Oleificio Lombardo">
+          <span class="tile-views">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            LIVE
+          </span>
+        </a>
+
+        <!-- Placeholder "aggiungi" opzionale -->
+        <a href="#contacts" class="tile tile-more">
+          <span class="tile-more-icon">+</span>
+          <span class="tile-caption">
+            <span class="lang-it">Altri in arrivo</span>
+            <span class="lang-en">More coming</span>
+          </span>
+        </a>
+      </section>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Marika Guardi</p>
+  </footer>
+
+  <!-- ============ CHAT FINTA (finestra) ============ -->
+  <div class="chat-window" id="chatWindow" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <span class="chat-dot"></span>
+        <strong>Marika</strong>
+        <span class="chat-status lang-it">online</span>
+        <span class="chat-status lang-en">online</span>
+      </div>
+      <button class="chat-close" id="chatClose" data-i18n-aria-it="Chiudi" data-i18n-aria-en="Close"
+        aria-label="Chiudi">✕</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-typing" id="chatTyping" style="display:none;">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="chat-input-row" id="chatInputRow" style="display:none;">
+      <input type="text" class="chat-input" id="chatInput" data-i18n-placeholder-it="Come posso contattarti?"
+        data-i18n-placeholder-en="How can I reach you?" data-i18n-aria-it="Come posso contattarti?"
+        data-i18n-aria-en="How can I reach you?" placeholder="Come posso contattarti?" autocomplete="off"
+        aria-label="Come posso contattarti?" />
+      <button type="button" class="chat-send" id="chatSend" data-i18n-aria-it="Invia" data-i18n-aria-en="Send"
+        aria-label="Invia">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ STORY VIEWER (testuale, stile IG) ============ -->
+  <div class="story-overlay" id="storyOverlay" aria-hidden="true">
+    <div class="story-card story-card-text" id="storyCard">
+
+      <div class="story-progress">
+        <div class="story-progress-bar" id="storyProgressBar"></div>
+      </div>
+
+      <div class="story-header">
+        <div class="story-avatar-ring">
+          <img src="img/marika-profile.jpg" alt="Marika Guardi" class="story-avatar" />
+        </div>
+        <div class="story-user">
+          <div class="story-user-row">
+            <span class="story-username">marikaguardi</span>
+            <span class="story-time">
+              <span class="lang-it">adesso</span>
+              <span class="lang-en">now</span>
+            </span>
+          </div>
+          <div class="story-audio-inline">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+            </svg>
+            <span class="story-audio-inline-text">This Year (Blessing)</span>
+          </div>
+        </div>
+        <button class="story-close" id="storyClose" data-i18n-aria-it="Chiudi" data-i18n-aria-en="Close"
+          aria-label="Chiudi">✕</button>
+      </div>
+
+      <!-- Contenuto testuale -->
+      <div class="story-text-content">
+        <div class="story-text-inner">
+          <h2 class="story-big-title">
+            <span class="lang-it">Cerco la mia prossima opportunità</span>
+            <span class="lang-en">I'm looking for my next opportunity</span>
+          </h2>
+          <br>
+          <p class="story-role">Junior Web Developer</p>
+          <p class="story-location">📍 Chester · Manchester · Liverpool</p>
+          <br>
+          <p class="story-para story-para-strong">
+            <span class="lang-it">Sono aperta a:</span>
+            <span class="lang-en">I'm open to:</span>
+          </p>
+
+          <ul class="story-list">
+            <li>▫️ Junior Web Developer</li>
+            <li>▫️ Junior Frontend Developer</li>
+            <li>▫️ Trainee Web Developer</li>
+            <li>▫️ Web Development Internship</li>
+          </ul>
+          <br>
+          <p class="story-para">
+            <span class="lang-it">💻 <strong>Disponibilità:</strong> in sede, ibrida o remota</span>
+            <span class="lang-en">💻 <strong>Availability:</strong> on-site, hybrid or remote</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="story-footer">
+        <input type="text" class="story-reply" id="storyReply" data-i18n-placeholder-it="Invia messaggio"
+          data-i18n-placeholder-en="Send message" data-i18n-aria-it="Invia messaggio" data-i18n-aria-en="Send message"
+          placeholder="Invia messaggio" autocomplete="off" aria-label="Invia messaggio" />
+        <button type="button" class="story-icon-btn story-like" id="storyLike" data-i18n-aria-it="Mi piace"
+          data-i18n-aria-en="Like" aria-label="Mi piace">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+        </button>
+        <button type="button" class="story-icon-btn" id="storySend" data-i18n-aria-it="Invia messaggio"
+          data-i18n-aria-en="Send message" aria-label="Invia messaggio">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+
+      <div class="story-toast" id="storyToast" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- ============ POST VIEWER (stile Instagram) ============ -->
+  <div class="post-overlay" id="postOverlay" aria-hidden="true">
+    <div class="post-card" id="postCard">
+
+      <!-- Header full width -->
+      <div class="post-header">
+        <div class="post-avatar-ring">
+          <img src="img/marika-profile.jpg" alt="Marika Guardi" class="post-avatar" />
+        </div>
+        <div class="post-user">
+          <span class="post-username">aurwebdev</span>
+          <span class="post-subtitle" id="postSubtitle">Progetto</span>
+        </div>
+        <button class="post-close" id="postClose" aria-label="Chiudi">✕</button>
+      </div>
+
+      <!-- Corpo a 2 colonne -->
+      <div class="post-content">
+
+        <!-- SINISTRA: video + azioni -->
+        <div class="post-left">
+          <div class="post-media-wrap">
+            <video class="post-media" id="postVideo" playsinline preload="metadata" controls></video>
+            <img class="post-media" id="postImage" alt="" style="display:none;" />
+          </div>
+
+          <div class="post-actions">
+            <button class="post-icon-btn post-like" id="postLike" aria-label="Mi piace">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </button>
+            <button class="post-icon-btn" aria-label="Commenta">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+            </button>
+            <button class="post-icon-btn" aria-label="Condividi">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+            <button class="post-icon-btn post-save" aria-label="Salva" style="margin-left:auto;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linejoin="round">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- DESTRA: titolo + descrizione + link -->
+        <div class="post-right">
+          <div class="post-body">
+            <h3 class="post-title" id="postTitle"></h3>
+            <p class="post-desc" id="postDesc"></p>
+            <a class="post-link" id="postLink" href="#" target="_blank" rel="noopener noreferrer">
+              <span class="lang-it">Visita il sito →</span>
+              <span class="lang-en">Visit site →</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HIGHLIGHT VIEWER (stile storia) ============ -->
+  <div class="story-overlay" id="highlightOverlay" aria-hidden="true">
+    <div class="story-card highlight-card" id="highlightCard">
+      <div class="story-progress">
+        <div class="story-progress-bar" id="highlightProgressBar"></div>
+      </div>
+
+      <div class="story-header">
+        <div class="story-avatar-ring">
+          <img src="img/marika-profile.jpg" alt="Marika Guardi" class="story-avatar" />
+        </div>
+        <div class="story-user">
+          <span class="story-username" id="highlightUser">marikaguardi</span>
+          <span class="story-time" id="highlightLabel">
+            <span class="lang-it">info</span>
+            <span class="lang-en">about</span>
+          </span>
+        </div>
+        <button class="story-close" id="highlightClose" data-i18n-aria-it="Chiudi" data-i18n-aria-en="Close"
+          aria-label="Chiudi">✕</button>
+      </div>
+
+      <div class="highlight-content" id="highlightContent">
+        <!-- riempito da JS -->
+      </div>
+
+      <div class="story-footer">
+        <div class="highlight-footer-actions" id="highlightFooterActions">
+          <!-- riempito da JS -->
+        </div>
+        <button type="button" class="story-icon-btn story-like" id="highlightLike" data-i18n-aria-it="Mi piace"
+          data-i18n-aria-en="Like" aria-label="Mi piace">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
