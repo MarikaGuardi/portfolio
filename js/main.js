@@ -67,16 +67,22 @@ const originalGridHTML = gridEl ? gridEl.innerHTML : "";
 // --- VIDEO TAB 1 (reels) ---
 // Sostituisci solo i percorsi "src" con i tuoi file.
 const reelsVideos = [
-  { src: "video/aaaaah.mp4", caption: "reel 01" },
-  { src: "video/cmd.mp4", caption: "reel 02" },
-  { src: "video/reel3.mp4", caption: "reel 03" },
+  { src: "video/mine/rene.mp4", caption: "" },
+  { src: "video/mine/lucky.mp4", caption: "" },
+  { src: "video/mine/chrisbrown.mp4", caption: "" },
+  { src: "video/mine/sea.mp4", caption: "" },
+  { src: "video/mine/book.mp4", caption: "" },
+  { src: "video/mine/cmd.mp4", caption: "" },
 ];
 
 // --- VIDEO TAB 2 (tags) ---
 const tagsVideos = [
-  { src: "video/tag1.mp4", caption: "clip 01" },
-  { src: "video/tag2.mp4", caption: "clip 02" },
-  { src: "video/tag3.mp4", caption: "clip 03" },
+  { src: "video/repost/interstellar.mp4", caption: "" },
+  { src: "video/repost/hope.mp4", caption: "" },
+  { src: "video/repost/3am.mp4", caption: "" },
+  { src: "video/repost/dontsit.mp4", caption: "" },
+  { src: "video/repost/visitors.mp4", caption: "" },
+  { src: "video/repost/motivated.mp4", caption: "" },
 ];
 
 // --- Genera l'HTML di una tile con solo video ---
