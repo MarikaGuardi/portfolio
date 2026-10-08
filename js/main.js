@@ -621,6 +621,7 @@ const postDesc = document.getElementById("postDesc");
 const postLink = document.getElementById("postLink");
 const postSubtitle = document.getElementById("postSubtitle");
 const postLike = document.getElementById("postLike");
+const postApk = document.getElementById("postApk");
 
 const projectsData = {
   kama: {
@@ -655,6 +656,7 @@ const projectsData = {
       en: 'An app to clean the smartphone photo gallery with a swipe (left: "Keep it", right: "Delete it"). Pictures marked for deletion are added to a list that requires confirmation before being permanently deleted. Used Stack: React Native - Typescript - Expo Platform.',
     },
     link: "https://tinyurl.com/SwipeCleanerApk",
+    apk: "https://tinyurl.com/SwipeCleanerApk",
   },
   coinfarm: {
     title: "Coin Farm",
@@ -711,6 +713,16 @@ function openPost(key) {
 
   postLink.href = data.link;
 
+  if (postApk) {
+    if (data.apk) {
+      postApk.href = data.apk;
+      postApk.style.display = "inline-flex";
+    } else {
+      postApk.style.display = "none";
+      postApk.removeAttribute("href");
+    }
+  }
+
   if (data.video) {
     postVideo.style.display = "block";
     postImage.style.display = "none";
@@ -746,6 +758,8 @@ function openVideoPost(videoSrc) {
   // Header e azioni restano visibili.
   const postRight = postOverlay.querySelector(".post-right");
   if (postRight) postRight.style.display = "none";
+
+  if (postApk) postApk.style.display = "none";
 
   // Assicurati che header e azioni siano visibili
   const postHeader = postOverlay.querySelector(".post-header");
@@ -785,6 +799,12 @@ function closePost() {
     postVideo.load();
   }
   if (postImage) postImage.removeAttribute("src");
+
+  if (postImage) postImage.removeAttribute("src");
+  if (postApk) {
+    postApk.style.display = "none";
+    postApk.removeAttribute("href");
+  }
 }
 
 /* ============================================

@@ -1594,6 +1594,27 @@ html[data-lang="en"] .lang-toggle .flag-en {
   background: var(--accent-blue-light);
 }
 
+/* --- Riga contenente i bottoni link (sito + APK) --- */
+.post-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* --- Bottone APK: variante verde del post-link --- */
+.post-link-apk {
+  background: #0a78ff;
+}
+
+.post-link-apk:hover {
+  background: #1a72de;
+}
+
+.post-link-apk svg {
+  flex-shrink: 0;
+}
+
 /* Post viewer in modalità solo-video (reels / tags) */
 .post-card.video-only {
   max-width: 420px;
